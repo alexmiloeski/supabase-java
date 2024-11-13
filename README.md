@@ -19,7 +19,7 @@ StorageAPI storageAPI = supabase.storage();
 List<Bucket> buckets = storageAPI.listBuckets();
 
 // Upload a file
-storageAPI.upload("mybucket/test.txt", new byte[]{1,2,3,4,5});
+storageAPI.upload("mybucket/test.txt", "hello".getBytes());
 ```
 
 #### Not implemented yet
