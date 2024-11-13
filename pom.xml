@@ -61,11 +61,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-    <properties>
-        <javadoc.opts>-Xdoclint:none</javadoc.opts>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gpg.executable>gpg2</gpg.executable>
-    </properties>
     <build>
         <plugins>
             <plugin>
@@ -106,22 +101,9 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
+                            <!--suppress UnresolvedMavenProperty -->
                             <additionalparam>${javadoc.opts}</additionalparam>
                         </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>
